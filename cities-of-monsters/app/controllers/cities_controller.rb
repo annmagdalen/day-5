@@ -34,7 +34,7 @@ class CitiesController < ApplicationController
   end
 
   def city_params
-    params.require(:city).permit(:name, :health)
+    params.require(:city).permit(:name, :health, :state_id)
   end
 
   def destroy

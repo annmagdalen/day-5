@@ -13,4 +13,7 @@
   <%= f.text_field :health %>
 
   <%= f.submit (@city.new_record? ? "Submit" : "Update") %>
+
+  <%= f.label :state_id %>
+  <%= f.collection_select(:state_id, State.all, :id, :name) %>
 <% end %>

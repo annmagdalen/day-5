@@ -6,6 +6,22 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-monster1=City.create! ({name: "Amsterdam", health: "good"})
-monster2=City.create! ({name: "Rotterdam", health: "bad"})
-monster3=City.create! ({name: "Groningen", health: "okay"})
+
+City.delete_all
+State.delete_all
+
+state1 = State.create!(name: "North-Holland")
+state2 = State.create!(name: "South-Holland")
+state3 = State.create!(name: "Middle-Holland")
+
+states_count = State.all.length
+puts "#{states_count} states were created."
+
+City.create!([
+  { name: "Amsterdam", health: 'good', state: state1 },
+  { name: "Rotterdam", health: 'bad', state: state2 },
+  { name: "Utrecht", health: 'okay', state: state3 },
+])
+
+cities_count = City.all.length
+puts "#{cities_count} cities were created."
