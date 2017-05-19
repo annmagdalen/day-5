@@ -8,10 +8,7 @@ class CitiesController < ApplicationController
   end
 
   def create
-    city_params = params.require(:city).permit(:name, :health)
-
     @city = City.new(city_params)
-
     if @city.save
        redirect_to @city
     else
@@ -22,4 +19,29 @@ class CitiesController < ApplicationController
   def show
     @city = City.find(params[:id])
   end
+
+  def edit
+    @city = City.find(params[:id])
+  end
+
+  def update
+    @city=City.find(params[:id])
+    if @city.update_attributes(city_params)
+      redirect_to @city
+    else
+      render "edit"
+    end
+  end
+
+  def city_params
+    params.require(:city).permit(:name, :health)
+  end
+
+  def destroy
+    @city=City.find(params[:id])
+    @city.destroy
+    redirect_to cities_path
+  end
+
+
 end

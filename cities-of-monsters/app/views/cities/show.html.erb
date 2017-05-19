@@ -1,3 +1,8 @@
 <h1><%= @city.name %></h1>
 
 <p>Health: <%= @city.health %></p>
+
+<%= link_to "EDIT", edit_city_path(@city.id) %>
+<br>
+<%= link_to "DELETE", city_path(@city.id), method:
+:delete, data: {confirm: "Are you sure?"} %>

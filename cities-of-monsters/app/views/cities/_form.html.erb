@@ -1,0 +1,16 @@
+<%= form_for @city do |f| %>
+
+<ul>
+  <% @city.errors.full_messages.each {|msg| %>
+    <li><%= msg %></li>
+  <% } %>
+</ul>
+
+  <%= f.label :name %>
+  <%= f.text_field :name %>
+
+  <%= f.label :health %>
+  <%= f.text_field :health %>
+
+  <%= f.submit (@city.new_record? ? "Submit" : "Update") %>
+<% end %>
