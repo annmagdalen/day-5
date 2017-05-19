@@ -1,0 +1,15 @@
+
+<h1>Cities</h1>
+
+<body>
+
+<% @cities.each do |city| %>
+  <p><%= link_to city.name, city_path(city)%></p>
+<% end %>
+
+<br>
+<br>
+
+<%= link_to "SUBMIT A NEW CITY", new_city_path %>
+
+</body>
