@@ -2,20 +2,20 @@
 
 <p>
   <strong>Name:</strong>
-  <%= @valley.name %>
+  <%= @state.name %>
 </p>
 
-<h4>List of Dinos</h4>
+<h4>List of Cities</h4>
 
-<% if @valley.dinosaurs.any? %>
+<% if @state.cities.any? %>
   <ul>
-    <% @valley.dinosaurs.each do |dino| %>
-      <li><%= dino.name %></li>
+    <% @state.cities.each do |city| %>
+      <li><%= city.name %></li>
     <% end %>
   </ul>
 <% else %>
-  <p>There are no dinos in this valley.</p>
+  <p>There are no cities in this state.</p>
 <% end %>
 
-<%= link_to 'Edit', edit_valley_path(@valley) %> |
-<%= link_to 'Back', valleys_path %>
+<%= link_to 'Edit', edit_state_path(@state) %> |
+<%= link_to 'Back', states_path %>

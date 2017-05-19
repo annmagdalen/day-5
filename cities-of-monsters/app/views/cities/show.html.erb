@@ -2,6 +2,8 @@
 
 <p>Health: <%= @city.health %></p>
 
+<p>State: <%= @city.state.name %></p>
+
 <%= link_to "EDIT", edit_city_path(@city.id) %>
 <br>
 <%= link_to "DELETE", city_path(@city.id), method:
